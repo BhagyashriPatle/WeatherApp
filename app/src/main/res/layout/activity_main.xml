@@ -1,19 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.weather_app_bhagya.viewModel.WeatherViewModel" />
+    </data>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/sunny_bg">
+
+        <fragment
+            android:id="@+id/mapFragment"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_300dp"
+            android:layout_alignParentTop="true"
+            tools:context=".MainActivity" />
+
+        <EditText
+            android:id="@+id/etCityName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_city_name"
+            android:layout_below="@id/mapFragment"
+            android:layout_marginTop="@dimen/_16dp"
+            android:layout_margin="@dimen/_16dp" />
+
+        <Button
+            android:id="@+id/btnGetWeather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/get_weather"
+            android:layout_below="@id/etCityName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_16dp" />
+
+        <TextView
+            android:id="@+id/tvWeatherInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/weather_info"
+            android:textSize="@dimen/_18sp"
+            android:textStyle="bold"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_margin="@dimen/_16dp"
+            android:textColor="@color/snowyStatusBarColor"
+            android:layout_below="@id/btnGetWeather"
+            android:layout_marginTop="@dimen/_16dp" />
+    </RelativeLayout>
+</layout>

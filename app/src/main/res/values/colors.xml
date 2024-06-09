@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
+    <color name="black">#000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="rainyStatusBarColor">#FF8A65</color>
+    <color name="cloudyStatusBarColor">#B0BEC5</color>
+    <color name="sunnyStatusBarColor">#FFEB3B</color>
+    <color name="snowyStatusBarColor">#FFFFFF</color>
+    <color name="defaultStatusBarColor">#303F9F</color>
 </resources>
